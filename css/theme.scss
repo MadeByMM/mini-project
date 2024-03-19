@@ -1,0 +1,307 @@
+//Variables
+$font-stack: "Dongle", "Madimi One", "Arial", "Sans-serif";
+$header-font: "Madimi One", "Arial", "Sans-serif";
+$main-green: #12594C;
+$main-yellow: #F28B30;
+$main-orange: #F27B35;
+$main-pink: #F27272;
+$main-black: #0D0D0D;
+
+//Site-wide setup
+body {
+    font-family: $font-stack;
+    color: $main-black;
+    margin: 0;
+    padding: 0;
+
+    h1, h2 {
+        font-family: $header-font;
+    }
+}
+
+
+//Header and menu
+header {
+    background-color: $main-orange;
+    margin: 0;
+    padding: 0;
+
+    img {
+        height: 50px;
+        float: left;
+        margin-top: 18px;
+    }
+
+    h1 {
+        font-family: $header-font;
+        float: left;
+    }
+
+    #headerContainer {
+        max-width: 960px;
+        margin: auto;
+        overflow: hidden;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+    
+            ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+    
+                li {
+                    margin: 0 20px;
+    
+                    a {
+                        text-decoration: none;
+                        color: $main-black;
+                        transition: 0.3s;
+                        font-size: 2em;
+    
+                        &:hover {
+                            color: $main-green;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                float: none;
+                text-align: center;
+            }
+            img {
+                display: none;
+            }
+            nav {
+                flex-direction: column;
+        
+                ul {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0;
+        
+                    li {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+//Index
+main {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/hero-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin containerSetting {
+    max-width: 960px;
+    margin: auto;
+    padding: 25px;
+    overflow: hidden;
+}
+
+@mixin pinkButton {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: $main-pink;
+    border-radius: 20px;
+    color: $main-black;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding-top: 15px;
+}
+
+.hero {
+
+    #heroContainer {
+        @include containerSetting;
+
+        h2 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 2em;
+            width: 65%;
+            float: right;
+        }
+
+        img {
+            width: 30%;
+            height: auto;
+            float: left;
+        }
+    }
+}
+
+.content {
+    
+
+    .contentContainer {
+        @include containerSetting;
+
+        .contentBox {
+            width: 45%;
+            margin: 1%;
+            float: left;
+            text-align: center;
+            border: 1px solid $main-yellow;
+            padding: 5px;
+
+            @media (max-width: 768px){
+                width: 100%;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 200px;
+            }
+
+            p {
+                font-size: 1.5em;
+            }
+
+            a {
+                @include pinkButton;
+            }
+        }
+    }
+}
+
+//Er du klar
+.erduklar {
+
+    #edkContainer {
+        @include containerSetting;
+
+        h2 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+        ol {
+            width: 70%;
+
+            li {
+                border-bottom: 1px solid $main-yellow;
+                h3 {
+                    font-size: 2em;
+                    margin: 0;
+                }
+    
+                p {
+                    margin: 0;
+                    font-size: 1.5em;
+                }
+            }
+            
+        }
+    }
+}
+
+//Sundhed
+.sundhed {
+
+    #sundhedContainer {
+        @include containerSetting;
+
+        h2 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+        .sundhedBox {
+            width: 45%;
+            height: 500px;
+            margin: 1%;
+            float: left;
+            text-align: center;
+            border: 1px solid $main-yellow;
+            padding: 5px;
+
+            @media (max-width: 768px){
+                width: 100%;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 200px;
+            }
+
+            h3 {
+                font-size: 2em;
+                margin: 0;
+            }
+
+            p {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+//Footer
+footer {
+    background-color: $main-orange;
+    color: $main-black;
+    text-align: center;
+    font-size: 1.5em;
+    overflow: hidden;
+
+    #footerContainer {
+        max-width: 960px;
+        margin: auto;
+
+       ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 0 20px;
+
+                a {
+                    text-decoration: none;
+                    color: $main-black;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: $main-green;
+                    }
+                }
+            }
+        }
+       }
+
+       @media (max-width: 768px) { 
+            ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+    
+                li {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
